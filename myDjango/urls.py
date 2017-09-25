@@ -17,8 +17,16 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 import xadmin
+from MyModel.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^xadmin/', xadmin.site.urls)
+    url(r'^xadmin/', xadmin.site.urls),
+
+    # router
+    url(r'^userlist/', UserList),
+    url(r'^articlelist/(?P<UserId>\d+)$', ArticleList),
+    url(r'^article/(?P<ArticleId>\d+)$', ArticleDetail)
+
+    # api
 ]
