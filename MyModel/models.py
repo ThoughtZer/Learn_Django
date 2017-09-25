@@ -34,3 +34,5 @@ class Article(models.Model):
 
     def __unicode__(self):
         return '%s' % (self.title)
+
+
