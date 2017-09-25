@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'xadmin',
     'crispy_forms',
+    'MyModel'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -78,7 +79,7 @@ DATABASES = {
     # database test url
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'myfirst',
+        'NAME': 'learn',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
