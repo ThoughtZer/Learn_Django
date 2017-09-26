@@ -1,7 +1,8 @@
 # coding=utf-8
 from __future__ import unicode_literals
-
 from django.db import models
+
+from myDjango.settings import MEDIA_ROOT
 
 
 # Create your models here.
@@ -36,3 +37,13 @@ class Article(models.Model):
         return '%s' % (self.title)
 
 
+class FileUpload(models.Model):
+    file_name = models.CharField(max_length=255, null=True, blank=True)
+    file_path = models.FileField(max_length=255, blank=True, upload_to=MEDIA_ROOT)
+
+    class Meta:
+        verbose_name = '文件'
+        verbose_name_plural = '文件'
+
+    def __unicode__(self):
+        return '%s' % (self.file_name)
